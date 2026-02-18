@@ -49,21 +49,18 @@ const Skills = () => {
             <div className="container">
                 <h2 className="section-title fade-in-up">Skills & Technologies</h2>
 
-                <div className="skills-container">
+                <div className="skills-grid-bento">
                     {skillCategories.map((category, index) => (
-                        <div key={index} className="skill-category-wrapper">
-                            <h3 className="category-title text-center mb-4">
-                                <span className="category-icon-main">{category.icon}</span> {category.title}
-                            </h3>
-                            <div className="skills-grid-new">
+                        <div key={index} className="skill-bento-card glass-card fade-in-up"
+                            style={{ animationDelay: `${index * 0.1}s` }}>
+                            <div className="bento-header">
+                                <span className="bento-icon">{category.icon}</span>
+                                <h3>{category.title}</h3>
+                            </div>
+                            <div className="bento-list">
                                 {category.skills.map((skill, skillIndex) => (
-                                    <div key={skillIndex} className="skill-card glass-card fade-in-up"
-                                        style={{ animationDelay: `${(index * 4 + skillIndex) * 0.1}s` }}>
-                                        <div className="skill-icon-wrapper">
-                                            {/* Using a generic code icon if no specific icon is available, or first letter */}
-                                            <span className="skill-initial">{skill.name.charAt(0)}</span>
-                                        </div>
-                                        <span className="skill-name-new">{skill.name}</span>
+                                    <div key={skillIndex} className="bento-item">
+                                        {skill.name}
                                     </div>
                                 ))}
                             </div>

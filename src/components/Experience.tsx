@@ -12,7 +12,8 @@ const Experience = () => {
                 {
                     name: 'Authenticator (IDAM Solution)',
                     details: [
-                        'Enhanced and maintained identity and access management systems using NestJS and MongoDB.',
+                        'Role: Full Stack Developer (Angular, NestJS, MongoDB)',
+                        'Enhanced and maintained identity and access management systems.',
                         'Implemented multi-factor authentication modules (Email, SMS, Face, FIDO, Push, Pattern).',
                         'Developed SCIM 2.0-based user and group provisioning APIs.',
                         'Integrated external identity providers through connector modules.',
