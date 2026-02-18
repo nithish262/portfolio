@@ -45,7 +45,7 @@ const Hero = () => {
                 <div className="hero-text fade-in-up">
                     <p className="hero-greeting">Hi, I'm</p>
                     <h1 className="hero-name">
-                        <span className="gradient-text">Nithish</span>
+                        <span className="gradient-text">Nithish Kumar P</span>
                     </h1>
                     <h2 className="hero-title">
                         <span className="typing-text">{displayText}</span>

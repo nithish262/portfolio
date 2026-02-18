@@ -132,7 +132,7 @@ const Contact = () => {
             </div>
 
             <footer className="footer">
-                <p>&copy; 2025 Nithish. Built with React & ❤️</p>
+                <p>&copy; 2025 Nithish Kumar P. Built with React & ❤️</p>
             </footer>
         </section>
     );

@@ -25,7 +25,7 @@ const About = () => {
                     </div>
 
                     <div className="about-text fade-in-up">
-                        <h3>Hello! I'm Nithish</h3>
+                        <h3>Hello! I'm Nithish Kumar P</h3>
                         <p>
                             I'm a passionate Full Stack Developer with a love for creating beautiful and functional web applications.
                             With expertise in modern web technologies, I specialize in building responsive, user-friendly interfaces
