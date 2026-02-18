@@ -1,7 +1,8 @@
 .skills-grid-bento {
+    /* Ensure horizontal layout on wider screens */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
     margin-top: 40px;
 }
 
