@@ -1,0 +1,149 @@
+.experience {
+    background-color: transparent;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    padding-left: 50px;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 10px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+}
+
+.timeline-content {
+    padding: 30px;
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.exp-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.exp-period {
+    background: rgba(102, 126, 234, 0.1);
+    color: var(--primary-color);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.exp-subheader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: var(--light-text);
+}
+
+.exp-subheader h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.exp-location {
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.exp-description {
+    margin-bottom: 20px;
+    color: var(--light-text);
+}
+
+.exp-projects {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-item {
+    margin-bottom: 20px;
+}
+
+.project-item:last-child {
+    margin-bottom: 0;
+}
+
+.project-item h5 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+.project-item ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.project-item ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: var(--light-text);
+    font-size: 0.95rem;
+}
+
+.project-item ul li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+@media (max-width: 600px) {
+    .timeline::after {
+        left: 20px;
+    }
+
+    .timeline-item {
+        padding-left: 45px;
+    }
+
+    .exp-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .exp-subheader {
+        flex-direction: column;
+        gap: 5px;
+    }
+}

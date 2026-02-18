@@ -27,36 +27,30 @@ const About = () => {
                     <div className="about-text fade-in-up">
                         <h3>Hello! I'm Nithish Kumar P</h3>
                         <p>
-                            I'm a passionate Full Stack Developer with a love for creating beautiful and functional web applications.
-                            With expertise in modern web technologies, I specialize in building responsive, user-friendly interfaces
-                            and robust backend systems.
+                            Motivated and detail-oriented Junior Software Developer with hands-on experience in building secure,
+                            scalable web applications. Skilled in backend development using NestJS, MongoDB, and RESTful APIs.
                         </p>
                         <p>
-                            My journey in web development started with a curiosity about how things work on the internet,
-                            and it has evolved into a career where I get to solve complex problems and bring creative ideas to life every day.
-                        </p>
-                        <p>
-                            When I'm not coding, you can find me exploring new technologies, contributing to open-source projects,
-                            or sharing knowledge with the developer community.
+                            Experienced in developing identity and access management systems, including SCIM and OpenID Connect integrations.
+                            Strong understanding of multi-factor authentication flows and API development.
+                            Passionate about learning new technologies and contributing to high-impact projects.
                         </p>
 
-                        <div className="about-highlights">
-                            <div className="highlight-item glass-card">
-                                <div className="highlight-icon">🎯</div>
-                                <h4>Detail Oriented</h4>
-                                <p>Meticulous attention to code quality and user experience</p>
+                        <div className="education-section">
+                            <h4 className="subsection-title">Education</h4>
+                            <div className="education-item glass-card">
+                                <div className="edu-header">
+                                    <h5>Master of Computer Applications (MCA)</h5>
+                                    <span className="edu-year">2021 – 2023</span>
+                                </div>
+                                <p className="edu-school">Ayya Nadar Janaki Ammal College, Sivakasi</p>
                             </div>
-
-                            <div className="highlight-item glass-card">
-                                <div className="highlight-icon">🚀</div>
-                                <h4>Fast Learner</h4>
-                                <p>Quick to adapt to new technologies and frameworks</p>
-                            </div>
-
-                            <div className="highlight-item glass-card">
-                                <div className="highlight-icon">💡</div>
-                                <h4>Problem Solver</h4>
-                                <p>Creative solutions to complex technical challenges</p>
+                            <div className="education-item glass-card">
+                                <div className="edu-header">
+                                    <h5>Bachelor of Computer Applications (BCA)</h5>
+                                    <span className="edu-year">2018 – 2021</span>
+                                </div>
+                                <p className="edu-school">VHNSN College, Virudhunagar</p>
                             </div>
                         </div>
                     </div>

@@ -32,7 +32,7 @@ const Contact = () => {
         { name: 'GitHub', icon: '💻', url: 'https://github.com' },
         { name: 'LinkedIn', icon: '💼', url: 'https://linkedin.com' },
         { name: 'Twitter', icon: '🐦', url: 'https://twitter.com' },
-        { name: 'Email', icon: '📧', url: 'mailto:contact@example.com' },
+        { name: 'Email', icon: '📧', url: 'mailto:nithishkumar2622001@gmail.com' },
     ];
 
     return (
@@ -53,7 +53,15 @@ const Contact = () => {
                                 <span className="detail-icon">📍</span>
                                 <div>
                                     <h4>Location</h4>
-                                    <p>India</p>
+                                    <p>Virudhunagar, Tamil Nadu</p>
+                                </div>
+                            </div>
+
+                            <div className="detail-item">
+                                <span className="detail-icon">📞</span>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <p>+91 6383316537</p>
                                 </div>
                             </div>
 
@@ -61,7 +69,7 @@ const Contact = () => {
                                 <span className="detail-icon">📧</span>
                                 <div>
                                     <h4>Email</h4>
-                                    <p>contact@example.com</p>
+                                    <p>nithishkumar2622001@gmail.com</p>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +114,7 @@ const Contact = () => {
                                     value={formData.email}
                                     onChange={handleChange}
                                     required
-                                    placeholder="your.email@example.com"
+                                    placeholder="nithishkumar2622001@gmail.com"
                                 />
                             </div>
 
