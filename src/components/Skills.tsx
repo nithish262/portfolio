@@ -26,10 +26,12 @@ const Skills = () => {
             title: 'Database & Protocols',
             icon: '🗄️',
             skills: [
-                { name: 'MongoDB', level: 85 },
-                { name: 'RESTful APIs', level: 90 },
-                { name: 'OAuth2.0 / OIDC', level: 80 },
-                { name: 'SCIM', level: 75 },
+                { name: 'MongoDB', level: 0 },
+                { name: 'Redis', level: 0 },
+                { name: 'Kafka', level: 0 },
+                { name: 'RESTful APIs', level: 0 },
+                { name: 'OAuth2.0 / OIDC', level: 0 },
+                { name: 'SCIM', level: 0 },
             ],
         },
         {
