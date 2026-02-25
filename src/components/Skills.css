@@ -73,8 +73,14 @@
     transform: scale(1.1);
 }
 
-.icon-white path {
-    fill: #e0e0e0;
+.theme-icon {
+    color: var(--color-text-primary);
+    transition: color 0.3s ease;
+}
+
+[data-theme='light'] .theme-icon {
+    color: #1a1a1a;
+    /* Darker for better contrast in light mode */
 }
 
 /* Skill Name */

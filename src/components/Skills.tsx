@@ -18,7 +18,7 @@ const Skills = () => {
             title: 'Backend',
             skills: [
                 { name: 'Node.js', icon: <FaNodeJs size={40} color="#339933" /> },
-                { name: 'Express.js', icon: <SiExpress size={40} color="#ffffff" /> },
+                { name: 'Express.js', icon: <SiExpress size={40} className="theme-icon" /> },
                 { name: 'NestJS', icon: <SiNestjs size={40} color="#E0234E" /> },
             ],
         },
@@ -27,7 +27,7 @@ const Skills = () => {
             skills: [
                 { name: 'MongoDB', icon: <SiMongodb size={40} color="#47A248" /> },
                 { name: 'Redis', icon: <SiRedis size={40} color="#DC382D" /> },
-                { name: 'Kafka', icon: <SiApachekafka size={40} color="#231F20" className="icon-white" /> },
+                { name: 'Kafka', icon: <SiApachekafka size={40} className="theme-icon" /> },
                 { name: 'Git', icon: <FaGitAlt size={40} color="#F05032" /> },
                 { name: 'Docker', icon: <FaDocker size={40} color="#2496ED" /> },
             ],
