@@ -13,6 +13,7 @@
     height: 28px;
     transition: background var(--transition-base), border-color var(--transition-base);
     flex-shrink: 0;
+    will-change: background, border-color;
 }
 
 .theme-toggle:hover {

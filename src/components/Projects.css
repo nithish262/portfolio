@@ -63,12 +63,21 @@
 
 .tech-tag {
     background: var(--color-bg-tertiary);
-    color: var(--color-accent);
+    color: var(--color-primary);
+    /* Switched from --color-accent for better contrast */
     padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: var(--radius-full);
     font-size: var(--font-size-sm);
-    font-weight: 500;
+    font-weight: 600;
+    /* Increased weight */
     border: 1px solid var(--glass-border);
+}
+
+[data-theme='light'] .tech-tag {
+    background: rgba(79, 70, 229, 0.08);
+    /* Light tint of primary */
+    color: var(--color-primary);
+    border-color: rgba(79, 70, 229, 0.2);
 }
 
 .project-links {

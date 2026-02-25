@@ -22,8 +22,10 @@
 
   /* Text Colors */
   --color-text-primary: #ffffff;
-  --color-text-secondary: #b4b4c8;
-  --color-text-muted: #6e6e8f;
+  --color-text-secondary: #cbd5e1;
+  /* Increased contrast from #b4b4c8 */
+  --color-text-muted: #94a3b8;
+  /* Increased contrast from #6e6e8f */
 
   /* Glassmorphism */
   --glass-bg: rgba(255, 255, 255, 0.05);
@@ -50,16 +52,19 @@
   --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
   --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
 
-  /* Accent Colors (slightly deeper for legibility on light) */
-  --color-primary: #5a6fd6;
-  --color-secondary: #6a3d9a;
-  --color-accent: #0097c4;
-  --color-accent-pink: #d96ef5;
+  /* Accent Colors (darkened for AA legibility on light backgrounds) */
+  --color-primary: #4f46e5;
+  /* Deeper indigo */
+  --color-secondary: #7e22ce;
+  /* Deeper purple */
+  --color-accent: #0891b2;
+  /* Darker cyan for text use */
+  --color-accent-pink: #c026d3;
 
   /* Text Colors */
-  --color-text-primary: #0d0d18;
-  --color-text-secondary: #3a3a5c;
-  --color-text-muted: #6e6e8f;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #334155;
+  --color-text-muted: #64748b;
 
   /* Glassmorphism (light glass) */
   --glass-bg: rgba(255, 255, 255, 0.65);
@@ -130,7 +135,7 @@ body {
   color: var(--color-text-primary);
   line-height: 1.6;
   overflow-x: hidden;
-  transition: background-color var(--transition-slow);
+  /* Removed heavy transition to prevent non-composited animation warnings */
 }
 
 /* ===== ACCESSIBILITY: SKIP LINK ===== */
@@ -273,6 +278,8 @@ a:hover {
   transition: all var(--transition-base);
   border: none;
   text-align: center;
+  /* Hint browser for potential properties that will change */
+  will-change: transform, box-shadow, color, background-color, border-color;
 }
 
 .btn-primary {
@@ -327,6 +334,18 @@ a:hover {
 
   to {
     opacity: 1;
+  }
+}
+
+@keyframes scroll-wheel {
+  0% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(16px);
+    opacity: 0;
   }
 }
 

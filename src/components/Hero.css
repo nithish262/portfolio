@@ -169,12 +169,12 @@
 
 @keyframes scroll-wheel {
     0% {
-        top: 8px;
+        transform: translateX(-50%) translateY(0);
         opacity: 1;
     }
 
     100% {
-        top: 24px;
+        transform: translateX(-50%) translateY(16px);
         opacity: 0;
     }
 }

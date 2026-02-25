@@ -66,8 +66,20 @@
 }
 
 .detail-item p {
-    color: var(--color-text-secondary);
+    color: var(--color-text-primary);
+    /* Increased from secondary for better link contrast */
     margin: 0;
+}
+
+.detail-item p a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.detail-item p a:hover {
+    color: var(--color-secondary);
+    text-decoration: underline;
 }
 
 .social-links {
