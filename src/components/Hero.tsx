@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
 import './Hero.css';
+import { useEffect, useState } from 'react';
 
 const Hero = () => {
     const [displayText, setDisplayText] = useState('');
@@ -34,22 +34,24 @@ const Hero = () => {
     };
 
     return (
-        <section id="home" className="hero">
-            <div className="hero-background">
+        <section id="home" className="hero" aria-label="Hero — introduction">
+            {/* Decorative background orbs — hidden from assistive tech */}
+            <div className="hero-background" aria-hidden="true">
                 <div className="gradient-orb orb-1"></div>
                 <div className="gradient-orb orb-2"></div>
                 <div className="gradient-orb orb-3"></div>
             </div>
 
-            <div className="hero-content container">
+            {/* Skip-link target */}
+            <div id="main-content" className="hero-content container">
                 <div className="hero-text fade-in-up">
                     <p className="hero-greeting">Hi, I'm</p>
                     <h1 className="hero-name">
                         <span className="gradient-text">Nithish Kumar P</span>
                     </h1>
-                    <h2 className="hero-title">
-                        <span className="typing-text">{displayText}</span>
-                        <span className="cursor">|</span>
+                    <h2 className="hero-title" aria-label={`Role: ${fullText}`}>
+                        <span className="typing-text" aria-live="polite">{displayText}</span>
+                        <span className="cursor" aria-hidden="true">|</span>
                     </h2>
                     <p className="hero-description">
                         I create beautiful, functional, and user-friendly web experiences.
@@ -57,16 +59,24 @@ const Hero = () => {
                     </p>
 
                     <div className="hero-buttons">
-                        <button className="btn btn-primary" onClick={scrollToProjects}>
+                        <button
+                            className="btn btn-primary"
+                            onClick={scrollToProjects}
+                            aria-label="View my work — scroll to projects section"
+                        >
                             View My Work
                         </button>
-                        <button className="btn btn-outline" onClick={scrollToContact}>
+                        <button
+                            className="btn btn-outline"
+                            onClick={scrollToContact}
+                            aria-label="Get in touch — scroll to contact section"
+                        >
                             Get In Touch
                         </button>
                     </div>
                 </div>
 
-                <div className="scroll-indicator">
+                <div className="scroll-indicator" aria-hidden="true">
                     <div className="mouse">
                         <div className="wheel"></div>
                     </div>

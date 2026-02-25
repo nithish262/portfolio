@@ -2,15 +2,15 @@ import './About.css';
 
 const About = () => {
     return (
-        <section id="about" className="section about">
+        <section id="about" className="section about" aria-label="About me">
             <div className="container">
                 <h2 className="section-title fade-in-up">About Me</h2>
 
                 <div className="about-content">
-                    <div className="about-image fade-in-up">
+                    <div className="about-image fade-in-up" aria-hidden="true">
                         <div className="image-wrapper">
                             <div className="image-placeholder">
-                                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nithish Kumar P avatar">
                                     <defs>
                                         <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
                                             <stop offset="0%" style={{ stopColor: '#667eea', stopOpacity: 1 }} />

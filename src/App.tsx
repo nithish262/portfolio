@@ -1,3 +1,4 @@
+import './App.css'
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -16,6 +17,11 @@ function App() {
       <Experience />
       <Projects />
       <Contact />
+
+      {/* Global page footer — sits below all sections */}
+      <footer className="site-footer" role="contentinfo">
+        <p>© 2025 Nithish Kumar P. Built with React &amp; ❤️</p>
+      </footer>
     </div>
   )
 }

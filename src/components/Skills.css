@@ -1,94 +1,119 @@
-.skills-grid-bento {
-    display: grid;
-    /* Force 4 columns on desktop to match reference image */
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.skill-bento-card {
-    padding: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    background: rgba(255, 255, 255, 0.02);
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
+/* Skills Container */
+.skills-container {
     display: flex;
     flex-direction: column;
+    gap: 40px;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.skill-bento-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.bento-header {
+/* Category Title */
+.category-title {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.bento-icon {
-    font-size: 1.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.bento-header h3 {
-    margin: 0;
-    font-size: 1.3rem;
-    color: var(--secondary-color);
     font-weight: 600;
 }
 
-.bento-list {
+.category-bullet {
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Grid Layout */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Skill Card */
+.skill-card {
+    background: rgba(17, 25, 40, 0.7);
+    /* Dark background similar to glass-card but simpler */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 12px;
+    width: 140px;
+    height: 120px;
+    transition: all 0.3s ease;
+    cursor: default;
 }
 
-.bento-item {
-    font-size: 1rem;
-    color: var(--text-color);
-    padding-left: 15px;
-    position: relative;
-    transition: color 0.2s ease;
+.skill-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.bento-item::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 6px;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    opacity: 0.5;
-    transition: opacity 0.2s ease;
+/* Icon Styles */
+.skill-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
 }
 
-.skill-bento-card:hover .bento-item::before {
-    opacity: 1;
+.skill-card:hover .skill-icon {
+    transform: scale(1.1);
 }
 
-.bento-item:hover {
-    color: white;
+.icon-white path {
+    fill: #e0e0e0;
+    /* Off-white for dark icons like Remix/Kafka on dark global theme */
 }
 
-@media (max-width: 1024px) {
-    .skills-grid-bento {
-        grid-template-columns: repeat(2, 1fr);
+/* Skill Name */
+.skill-name {
+    color: var(--text-secondary);
+    /* Assuming this var exists, else use #a0a0a0 */
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.skill-card:hover .skill-name {
+    color: #ffffff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .skills-grid {
+        justify-content: center;
+    }
+
+    .category-title {
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    .skill-card {
+        width: 120px;
+        height: 110px;
+    }
+
+    .skill-icon svg {
+        width: 32px;
+        height: 32px;
     }
 }
 
-@media (max-width: 600px) {
-    .skills-grid-bento {
-        grid-template-columns: 1fr;
+@media (max-width: 480px) {
+    .skill-card {
+        width: 100%;
+        max-width: 140px;
     }
 }

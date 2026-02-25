@@ -1,3 +1,16 @@
+/* ===== SCREEN READER ONLY ===== */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
 .contact {
     background: var(--color-bg-primary);
     position: relative;
@@ -63,17 +76,41 @@
 }
 
 .social-link {
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--font-size-2xl);
     transition: all var(--transition-base);
+    color: var(--color-text-secondary);
+}
+
+/* Explicitly cascade color into SVG children */
+.social-link svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    stroke: none;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* Email icon uses stroke not fill */
+.social-link svg[stroke] {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
 }
 
 .social-link:hover {
+    color: var(--color-primary);
     transform: translateY(-5px) scale(1.1);
+    box-shadow: var(--shadow-glow);
+}
+
+.social-link:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
 }
 
 .contact-form {
@@ -120,6 +157,13 @@
     width: 100%;
     font-size: var(--font-size-lg);
     padding: var(--spacing-md) var(--spacing-xl);
+}
+
+.submit-btn.submitted,
+.submit-btn:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+    transform: none;
 }
 
 .footer {

@@ -1,0 +1,55 @@
+/* ===== THEME TOGGLE BUTTON ===== */
+.theme-toggle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-full);
+    padding: 0;
+    cursor: pointer;
+    width: 52px;
+    height: 28px;
+    transition: background var(--transition-base), border-color var(--transition-base);
+    flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+    border-color: var(--color-primary);
+    background: rgba(102, 126, 234, 0.12);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+.theme-toggle-track {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    pointer-events: none;
+}
+
+.theme-toggle-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: transform var(--transition-base);
+    margin-left: auto;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Light theme: sun on the left */
+[data-theme='light'] .theme-toggle-thumb {
+    margin-left: 0;
+    margin-right: auto;
+}

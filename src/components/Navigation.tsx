@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import ThemeToggle from './ThemeToggle';
 import './Navigation.css';
 
 const Navigation = () => {
@@ -18,7 +19,6 @@ const Navigation = () => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
 
-            // Update active section based on scroll position
             const sections = navItems.map(item => document.getElementById(item.id));
             const scrollPosition = window.scrollY + 100;
 
@@ -34,7 +34,7 @@ const Navigation = () => {
             });
         };
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -47,28 +47,49 @@ const Navigation = () => {
     };
 
     return (
-        <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
+        <nav
+            className={`navigation ${isScrolled ? 'scrolled' : ''}`}
+            role="navigation"
+            aria-label="Main navigation"
+        >
             <div className="nav-container">
-                <div className="nav-logo">
-                    <span className="gradient-text">Portfolio</span>
+                <a
+                    className="nav-logo"
+                    href="#home"
+                    onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}
+                    aria-label="Nithish Kumar P — go to home"
+                >
+                    <span className="gradient-text">Nithish</span>
+                </a>
+
+                <div className="nav-actions">
+                    <ThemeToggle />
+
+                    <button
+                        className={`mobile-menu-toggle ${isMobileMenuOpen ? 'open' : ''}`}
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+                        aria-expanded={isMobileMenuOpen}
+                        aria-controls="nav-menu"
+                    >
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </button>
                 </div>
 
-                <button
-                    className="mobile-menu-toggle"
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    aria-label="Toggle menu"
+                <ul
+                    id="nav-menu"
+                    className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}
+                    role="menubar"
                 >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-
-                <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
                     {navItems.map((item) => (
-                        <li key={item.id}>
+                        <li key={item.id} role="none">
                             <button
                                 className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
                                 onClick={() => scrollToSection(item.id)}
+                                role="menuitem"
+                                aria-current={activeSection === item.id ? 'page' : undefined}
                             >
                                 {item.label}
                             </button>
