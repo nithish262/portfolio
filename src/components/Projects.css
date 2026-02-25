@@ -82,13 +82,21 @@
     gap: var(--spacing-xs);
     color: var(--color-primary);
     font-weight: 600;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
     transition: all var(--transition-fast);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    min-height: 48px;
 }
 
 .project-link:hover {
     color: var(--color-accent);
-    gap: var(--spacing-sm);
+    background: rgba(102, 126, 234, 0.05);
+}
+
+.project-link:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
 }
 
 .project-link svg {

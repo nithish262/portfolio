@@ -54,10 +54,14 @@
     font-size: var(--font-size-base);
     font-weight: 500;
     cursor: pointer;
-    padding: var(--spacing-xs) var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--radius-sm);
     transition: all var(--transition-fast);
     position: relative;
+    /* Ensure minimum touch target size */
+    min-height: 48px;
+    display: flex;
+    align-items: center;
 }
 
 .nav-link::after {
@@ -149,6 +153,8 @@
     .nav-link {
         width: 100%;
         text-align: left;
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: var(--font-size-lg);
     }
 
     .nav-actions {

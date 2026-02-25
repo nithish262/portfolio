@@ -137,7 +137,8 @@
     border-radius: var(--radius-sm);
     color: var(--color-text-primary);
     font-family: var(--font-body);
-    font-size: var(--font-size-base);
+    /* Explicit 16px to prevent iOS auto-zoom on focus */
+    font-size: 16px;
     transition: all var(--transition-fast);
 }
 
@@ -166,17 +167,7 @@
     transform: none;
 }
 
-.footer {
-    margin-top: var(--spacing-3xl);
-    padding-top: var(--spacing-xl);
-    border-top: 1px solid var(--glass-border);
-    text-align: center;
-}
 
-.footer p {
-    color: var(--color-text-muted);
-    margin: 0;
-}
 
 @media (max-width: 968px) {
     .contact-content {

@@ -16,41 +16,47 @@
     bottom: 0;
     overflow: hidden;
     z-index: 0;
+    /* Promote to own compositing layer — avoids re-paint on scroll */
+    will-change: transform;
 }
 
 .gradient-orb {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.6;
-    animation: float 6s ease-in-out infinite;
+    /* Reduced blur from 80px → 60px — blur is VERY expensive on mobile */
+    filter: blur(60px);
+    opacity: 0.5;
+    animation: float 8s ease-in-out infinite;
+    /* GPU compositing — keeps animation off main thread */
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .orb-1 {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     background: var(--gradient-primary);
-    top: -200px;
-    left: -200px;
+    top: -150px;
+    left: -150px;
     animation-delay: 0s;
 }
 
 .orb-2 {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     background: var(--gradient-accent);
-    bottom: -150px;
-    right: -150px;
-    animation-delay: 2s;
+    bottom: -120px;
+    right: -120px;
+    animation-delay: 3s;
 }
 
 .orb-3 {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     background: var(--gradient-secondary);
     top: 50%;
     right: 10%;
-    animation-delay: 4s;
+    animation-delay: 6s;
 }
 
 .hero-content {
@@ -120,6 +126,12 @@
     flex-wrap: wrap;
 }
 
+/* Ensure touch target is ≥48px tall */
+.hero-buttons .btn {
+    min-height: 48px;
+    padding: 14px var(--spacing-lg);
+}
+
 .scroll-indicator {
     position: absolute;
     bottom: var(--spacing-xl);
@@ -132,6 +144,7 @@
     color: var(--color-text-muted);
     font-size: var(--font-size-sm);
     animation: float 2s ease-in-out infinite;
+    will-change: transform;
 }
 
 .mouse {
@@ -151,10 +164,10 @@
     top: 8px;
     left: 50%;
     transform: translateX(-50%);
-    animation: scroll 1.5s infinite;
+    animation: scroll-wheel 1.5s infinite;
 }
 
-@keyframes scroll {
+@keyframes scroll-wheel {
     0% {
         top: 8px;
         opacity: 1;
@@ -166,6 +179,7 @@
     }
 }
 
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
     .hero {
         padding-top: 60px;
@@ -188,15 +202,27 @@
         align-items: center;
     }
 
-    .btn {
+    .hero-buttons .btn {
         width: 100%;
-        max-width: 250px;
+        max-width: 280px;
     }
 
-    .orb-1,
-    .orb-2,
-    .orb-3 {
-        width: 300px;
-        height: 300px;
+    /* Smaller, cheaper orbs on mobile */
+    .orb-1 {
+        width: 200px;
+        height: 200px;
+        filter: blur(40px);
     }
+
+    .orb-2 {
+        width: 180px;
+        height: 180px;
+        filter: blur(40px);
+    }
+
+    .orb-3 {
+        display: none;
+    }
+
+    /* Drop orb-3 entirely on mobile to save GPU */
 }

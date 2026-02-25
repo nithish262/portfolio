@@ -13,7 +13,7 @@
     content: '';
     position: absolute;
     width: 2px;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--glass-border);
     top: 0;
     bottom: 0;
     left: 20px;
@@ -31,10 +31,10 @@
     width: 20px;
     height: 20px;
     left: 10px;
-    background: var(--primary-color);
+    background: var(--color-primary);
     border-radius: 50%;
     z-index: 1;
-    box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+    box-shadow: var(--shadow-glow);
 }
 
 .timeline-content {
@@ -53,12 +53,12 @@
 .exp-header h3 {
     margin: 0;
     font-size: 1.5rem;
-    color: var(--text-color);
+    color: var(--color-text-primary);
 }
 
 .exp-period {
     background: rgba(102, 126, 234, 0.1);
-    color: var(--primary-color);
+    color: var(--color-primary);
     padding: 5px 12px;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -69,7 +69,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
-    color: var(--light-text);
+    color: var(--color-text-secondary);
 }
 
 .exp-subheader h4 {
@@ -85,13 +85,13 @@
 
 .exp-description {
     margin-bottom: 20px;
-    color: var(--light-text);
+    color: var(--color-text-secondary);
 }
 
 .exp-projects {
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid var(--glass-border);
 }
 
 .project-item {
@@ -103,7 +103,7 @@
 }
 
 .project-item h5 {
-    color: var(--secondary-color);
+    color: var(--color-secondary);
     margin-bottom: 10px;
     font-size: 1.05rem;
 }
@@ -117,7 +117,7 @@
     position: relative;
     padding-left: 20px;
     margin-bottom: 8px;
-    color: var(--light-text);
+    color: var(--color-text-secondary);
     font-size: 0.95rem;
 }
 
@@ -125,7 +125,7 @@
     content: '▹';
     position: absolute;
     left: 0;
-    color: var(--primary-color);
+    color: var(--color-primary);
 }
 
 @media (max-width: 600px) {
@@ -145,5 +145,9 @@
     .exp-subheader {
         flex-direction: column;
         gap: 5px;
+    }
+
+    .timeline-content {
+        padding: 20px;
     }
 }
