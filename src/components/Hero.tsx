@@ -2,21 +2,26 @@ import './Hero.css';
 import { useEffect, useState } from 'react';
 
 const Hero = () => {
-    const [displayText, setDisplayText] = useState('');
     const fullText = 'Full Stack Developer';
+    // Start with full text for immediate LCP (Largest Contentful Paint)
+    const [displayText, setDisplayText] = useState(fullText);
 
     useEffect(() => {
-        let index = 0;
-        const timer = setInterval(() => {
-            if (index <= fullText.length) {
-                setDisplayText(fullText.slice(0, index));
-                index++;
-            } else {
-                clearInterval(timer);
-            }
-        }, 100);
+        // Only start typing animation after initial render to avoid LCP delay
+        const timer = setTimeout(() => {
+            let index = 0;
+            const typingInterval = setInterval(() => {
+                if (index <= fullText.length) {
+                    setDisplayText(fullText.slice(0, index));
+                    index++;
+                } else {
+                    clearInterval(typingInterval);
+                }
+            }, 100);
+            return () => clearInterval(typingInterval);
+        }, 1000); // 1s delay before re-typing
 
-        return () => clearInterval(timer);
+        return () => clearTimeout(timer);
     }, []);
 
     const scrollToContact = () => {

@@ -92,6 +92,10 @@
 
 .typing-text {
     color: var(--color-accent);
+    display: inline-block;
+    min-width: 280px;
+    /* Prevent layout shift during typing */
+    text-align: left;
 }
 
 .cursor {
