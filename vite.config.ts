@@ -15,7 +15,6 @@ export default defineConfig({
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom'],
-          'icons-vendor': ['react-icons'],
         },
         // Content-hash filenames for long-lived caching
         entryFileNames: 'assets/[name]-[hash].js',
